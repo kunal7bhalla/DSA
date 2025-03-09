@@ -5,10 +5,6 @@ public:
             return 0;
         }
 
-         if(n==startidx){
-            return nums[startidx];
-        }
-
         if(dp[n]!=-1){
             return dp[n];
         }

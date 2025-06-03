@@ -1,50 +1,22 @@
-//{ Driver Code Starts
-// Initial Template for C++
-
-#include <bits/stdc++.h>
-using namespace std;
-
-
-// } Driver Code Ends
-
 // User function Template for C++
 class Solution {
   public:
     string reverseString(string& s) {
         // code here
+        string s1="";
+        stack<int> st;
         
-        int j=s.length()-1;
-        
-        int i=0;
-        
-        while(i<=j){
-            swap(s[i],s[j]);
-            i++;
-            j--;
+        for(int i=0;i<s.size();i++){
+            st.push(s[i]);
         }
         
-        return s;
+        while(!st.empty()){
+            s1+=st.top();
+            st.pop();
+        }
+        
+        return s1;
+        
+        
     }
 };
-
-
-
-//{ Driver Code Starts.
-
-int main() {
-
-    int t;
-    cin >> t;
-    while (t--) {
-        string s;
-        cin >> s;
-        Solution ob;
-        cout << ob.reverseString(s) << endl;
-
-        cout << "~"
-             << "\n";
-    }
-    return 0;
-}
-
-// } Driver Code Ends
